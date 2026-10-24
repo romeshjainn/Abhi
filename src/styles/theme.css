@@ -1,0 +1,69 @@
+/* ==========================================================================
+   ABHINANDAN NX — CENTRAL THEME
+   --------------------------------------------------------------------------
+   Every colour, font, radius and motion value on the site comes from here.
+   Change a value below and the whole website updates.
+   Tailwind utilities (bg-ink, text-accent, bg-primary …) are mapped to these
+   variables in src/app/globals.css.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand ------------------------------------------------------------ */
+  --primary: #6e1b30;          /* deep wine — brand colour                   */
+  --primary-deep: #3a0d19;     /* darkest wine — marquee, contact            */
+  --accent: #c9a86c;           /* champagne gold — threads, highlights       */
+  --accent-soft: #e4d0a5;      /* pale gold                                  */
+
+  /* ---- Surfaces --------------------------------------------------------- */
+  --ink: #0e0a09;              /* page background (warm black)               */
+  --ink-soft: #16110f;         /* alternate dark sections                    */
+  --ink-raised: #221a17;       /* cards on dark                              */
+  --ivory: #f3ede4;            /* light sections                             */
+  --ivory-deep: #e7ddcf;       /* cards on light                             */
+  --overlay: #070505;          /* image shading, lightbox backdrop           */
+
+  /* ---- Text ------------------------------------------------------------- */
+  --on-dark: #f3ede4;
+  --on-dark-muted: #a8998c;
+  --on-light: #1b1412;
+  --on-light-muted: #6b5d55;
+
+  /* ---- Hairlines -------------------------------------------------------- */
+  --line-dark: #f3ede41f;      /* lines on dark backgrounds                  */
+  --line-light: #1b14121f;     /* lines on light backgrounds                 */
+
+  /* ---- Collection mood colours ------------------------------------------
+     The collection section's background shifts to each saree's tone as it
+     changes on scroll.                                                     */
+  --tone-silk: #1f1124;
+  --tone-banarasi: #10142c;
+  --tone-designer: #0b1a13;
+  --tone-festive: #2a1908;
+  --tone-ethnic: #2b100c;
+  --tone-bridal: #2a0d18;
+
+  /* ---- Buttons ---------------------------------------------------------- */
+  --button-bg: var(--ivory);
+  --button-text: var(--on-light);
+  --button-hover-bg: var(--accent);
+  --button-hover-text: var(--on-light);
+  --whatsapp: #1f7a52;
+  --whatsapp-hover: #18643f;
+
+  /* ---- Typography -------------------------------------------------------
+     First value = web font loaded in src/app/layout.tsx.                   */
+  --typeface-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", serif;
+  --typeface-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
+  --typeface-devanagari: var(--font-noto-serif-devanagari), "Noto Serif Devanagari", serif;
+
+  /* ---- Shape & spacing -------------------------------------------------- */
+  --radius-pill: 999px;
+  --radius-card: 4px;
+  --container-max: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-space: clamp(6rem, 13vw, 11rem);
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --ease-out-curve: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drape-curve: cubic-bezier(0.77, 0, 0.18, 1);
+}

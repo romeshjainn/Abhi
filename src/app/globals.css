@@ -1,0 +1,538 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+/* Map the central theme (src/styles/theme.css) onto Tailwind utilities. */
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-deep: var(--primary-deep);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-raised: var(--ink-raised);
+  --color-ivory: var(--ivory);
+  --color-ivory-deep: var(--ivory-deep);
+  --color-overlay: var(--overlay);
+  --color-on-dark: var(--on-dark);
+  --color-on-dark-muted: var(--on-dark-muted);
+  --color-on-light: var(--on-light);
+  --color-on-light-muted: var(--on-light-muted);
+  --color-line-dark: var(--line-dark);
+  --color-line-light: var(--line-light);
+
+  --font-display: var(--typeface-display);
+  --font-sans: var(--typeface-sans);
+  --font-devanagari: var(--typeface-devanagari);
+
+  --ease-out-soft: var(--ease-out-curve);
+  --ease-drape: var(--ease-drape-curve);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
+@layer base {
+  html {
+    background-color: var(--ink);
+    color: var(--on-dark);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--typeface-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    background-color: var(--ink);
+    color: var(--on-dark);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--on-light);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 4px;
+  }
+}
+
+/* Smooth scrolling (Lenis) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Components                                                                 */
+/* -------------------------------------------------------------------------- */
+@layer components {
+  .container-site {
+    width: min(100% - 2 * var(--gutter), var(--container-max));
+    margin-inline: auto;
+  }
+
+  .section-space {
+    padding-block: var(--section-space);
+  }
+
+  .label {
+    font-family: var(--typeface-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .display {
+    font-family: var(--typeface-display);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---- Pill buttons ----------------------------------------------------- */
+  .btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    padding: 0.6rem 0.75rem 0.6rem 1.6rem;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: color 0.6s var(--ease-out-curve), border-color 0.6s var(--ease-out-curve);
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    transform: translateY(101%);
+    transition: transform 0.6s var(--ease-out-curve);
+  }
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    transform: translateY(0);
+  }
+  .btn-icon {
+    display: inline-flex;
+    height: 2.1rem;
+    width: 2.1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    transition: transform 0.6s var(--ease-out-curve);
+  }
+  .btn:hover .btn-icon {
+    transform: rotate(-45deg);
+  }
+
+  .btn-light {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+  }
+  .btn-light::before {
+    background-color: var(--button-hover-bg);
+  }
+  .btn-light .btn-icon {
+    background-color: var(--on-light);
+    color: var(--ivory);
+  }
+
+  .btn-outline {
+    border-color: color-mix(in srgb, var(--on-dark) 30%, transparent);
+    color: var(--on-dark);
+    padding-right: 1.6rem;
+  }
+  .btn-outline::before {
+    background-color: var(--on-dark);
+  }
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    color: var(--on-light);
+    border-color: var(--on-dark);
+  }
+
+  .btn-whatsapp {
+    background-color: var(--whatsapp);
+    color: #fff;
+  }
+  .btn-whatsapp::before {
+    background-color: var(--whatsapp-hover);
+  }
+  .btn-whatsapp .btn-icon {
+    background-color: #ffffff26;
+  }
+
+  /* Underline that draws in */
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.6s var(--ease-out-curve);
+  }
+  .link-line:hover,
+  .link-line:focus-visible {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
+
+  /* Image placeholder — shown if a photo fails to load */
+  .img-frame {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--ink-raised);
+    background-image:
+      radial-gradient(90% 70% at 70% 20%, color-mix(in srgb, var(--primary) 55%, transparent), transparent 70%),
+      repeating-linear-gradient(90deg, transparent 0 22px, color-mix(in srgb, var(--accent) 9%, transparent) 22px 23px);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Film grain over the whole site                                             */
+/* -------------------------------------------------------------------------- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* -------------------------------------------------------------------------- */
+/* PLEATS — the saree-drape image transition                                  */
+/* An image is cut into vertical strips; each strip falls into place like a   */
+/* pleat, with a gold thread running along its edge.                          */
+/* -------------------------------------------------------------------------- */
+.pleat-stage {
+  container-type: inline-size;
+}
+.pleat {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.pleat-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100cqw;
+  transform-origin: 50% 50%;
+}
+.pleat-fold {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #fff 14%, transparent) 0%,
+    transparent 35%,
+    color-mix(in srgb, var(--overlay) 55%, transparent) 100%
+  );
+  opacity: 0;
+}
+.pleat-thread {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  margin-top: -1px;
+  background: linear-gradient(90deg, transparent, var(--accent-soft), var(--accent), transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 70%, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Intro version (hero): strips drop in once on page load */
+.pleat-intro .pleat {
+  clip-path: inset(0 0 100% 0);
+  animation: pleat-drop 1.6s var(--ease-drape-curve) forwards;
+  animation-delay: calc(var(--i) * 110ms + 250ms);
+}
+.pleat-intro .pleat-inner {
+  animation: pleat-settle 2.4s var(--ease-out-curve) both;
+  animation-delay: calc(var(--i) * 110ms + 250ms);
+}
+.pleat-intro .pleat-fold {
+  animation: pleat-fold 2s var(--ease-out-curve) both;
+  animation-delay: calc(var(--i) * 110ms + 250ms);
+}
+.pleat-intro .pleat-thread {
+  animation: pleat-thread 1.6s var(--ease-drape-curve) both;
+  animation-delay: calc(var(--i) * 110ms + 250ms);
+}
+
+@keyframes pleat-drop {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes pleat-settle {
+  from {
+    transform: translateY(-7%) scale(1.12);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes pleat-fold {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pleat-thread {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Scroll version (collection story): JS sets --q (0→1) per strip, --t per
+   slide and --shade on the slide being covered. */
+.story-slide .pleat {
+  clip-path: inset(0 0 calc((1 - var(--q, 1)) * 100%) 0);
+}
+.story-slide .pleat-inner {
+  transform: translateY(calc((1 - var(--q, 1)) * -6%)) scale(calc(1.12 - 0.12 * var(--t, 1)));
+}
+.story-slide .pleat-fold {
+  opacity: calc(var(--q, 1) * (1 - var(--q, 1)) * 3.2);
+}
+.story-slide .pleat-thread {
+  top: calc(var(--q, 1) * 100%);
+  opacity: calc(var(--q, 1) * (1 - var(--q, 1)) * 8);
+}
+.story-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--overlay);
+  opacity: calc(var(--shade, 0) * 0.6);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hero                                                                       */
+/* -------------------------------------------------------------------------- */
+.hero-shade {
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--overlay) 55%, transparent) 0%, transparent 25%),
+    linear-gradient(
+      to top,
+      var(--ink) 0%,
+      color-mix(in srgb, var(--ink) 80%, transparent) 22%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 55%,
+      transparent 75%
+    );
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  70%,
+  100% {
+    transform: translateY(300%);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Masked line: text slides up from behind an invisible edge */
+.mask-line {
+  display: block;
+  overflow: hidden;
+  /* room for Devanagari matras & italic overhang */
+  padding: 0.12em 0.08em 0.04em;
+  margin: -0.12em -0.08em -0.04em;
+}
+.mask-line > span {
+  display: inline-block;
+  animation: rise 1.5s var(--ease-out-curve) both;
+  animation-delay: var(--d, 0ms);
+}
+.anim-fade-up {
+  animation: fade-up 1.2s var(--ease-out-curve) both;
+  animation-delay: var(--d, 0ms);
+}
+.anim-fade {
+  animation: fade 1.4s var(--ease-out-curve) both;
+  animation-delay: var(--d, 0ms);
+}
+.anim-grow-y {
+  transform-origin: top;
+  animation: grow-y 1.8s var(--ease-drape-curve) both;
+  animation-delay: var(--d, 0ms);
+}
+.anim-grow-x {
+  transform-origin: center;
+  animation: grow-x 1.4s var(--ease-drape-curve) both;
+  animation-delay: var(--d, 0ms);
+}
+.cue-dot {
+  animation: cue 2.6s var(--ease-out-curve) 3s infinite;
+}
+.badge-spin {
+  animation: spin 28s linear infinite;
+}
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Scroll reveals — content is only hidden while JavaScript is running.       */
+/* -------------------------------------------------------------------------- */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 1.2s var(--ease-out-curve),
+    transform 1.4s var(--ease-out-curve);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal="image"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(14% 10% 14% 10%);
+  transition: clip-path 1.6s var(--ease-drape-curve);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal="image"] img {
+  transform: scale(1.25);
+  transition: transform 2s var(--ease-out-curve);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0 0);
+}
+.js [data-reveal].is-revealed img {
+  transform: none;
+}
+
+/* Lightbox */
+.lightbox::backdrop {
+  background-color: color-mix(in srgb, var(--overlay) 94%, transparent);
+  backdrop-filter: blur(6px);
+}
+.lightbox[open] {
+  animation: fade 0.5s var(--ease-out-curve) both;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reduced motion: no intro animation, no marquee, instant reveals.           */
+/* -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .js [data-reveal],
+  .js [data-reveal="image"] {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+  .js [data-reveal="image"] img {
+    transform: none;
+  }
+  .marquee-track,
+  .cue-dot,
+  .badge-spin {
+    animation: none;
+  }
+}
