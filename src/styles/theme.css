@@ -1,57 +1,66 @@
 /* ==========================================================================
-   ABHINANDAN NX — CENTRAL THEME
+   Abhinandan Ex — CENTRAL THEME
    --------------------------------------------------------------------------
-   Every colour, font, radius and motion value on the site comes from here.
-   Change a value below and the whole website updates.
-   Tailwind utilities (bg-ink, text-accent, bg-primary …) are mapped to these
-   variables in src/app/globals.css.
+   ORANGE + WHITE — bright, premium, modern Indian fashion
    ========================================================================== */
 
 :root {
   /* ---- Brand ------------------------------------------------------------ */
-  --primary: #6e1b30;          /* deep wine — brand colour                   */
-  --primary-deep: #3a0d19;     /* darkest wine — marquee, contact            */
-  --accent: #c9a86c;           /* champagne gold — threads, highlights       */
-  --accent-soft: #e4d0a5;      /* pale gold                                  */
+  --primary: #ff7a00;
+  /* strong vibrant orange */
+  --primary-deep: #e85d00;
+  /* deeper orange */
+  --accent: #ff9a3c;
+  /* light orange */
+  --accent-soft: #ffd0a3;
+  /* soft peach */
 
   /* ---- Surfaces --------------------------------------------------------- */
-  --ink: #0e0a09;              /* page background (warm black)               */
-  --ink-soft: #16110f;         /* alternate dark sections                    */
-  --ink-raised: #221a17;       /* cards on dark                              */
-  --ivory: #f3ede4;            /* light sections                             */
-  --ivory-deep: #e7ddcf;       /* cards on light                             */
-  --overlay: #070505;          /* image shading, lightbox backdrop           */
+  --ink: #f97316;
+  /* MAIN ORANGE — hero/background */
+  --ink-soft: #ff8a32;
+  /* lighter orange sections */
+  --ink-raised: #ff9f4a;
+  /* cards on orange */
+  --ivory: #ffffff;
+  /* pure white */
+  --ivory-deep: #fff4e8;
+  /* very light orange-white */
+  --overlay: #c94f00;
+  /* orange image overlay */
 
   /* ---- Text ------------------------------------------------------------- */
-  --on-dark: #f3ede4;
-  --on-dark-muted: #a8998c;
-  --on-light: #1b1412;
-  --on-light-muted: #6b5d55;
+  --on-dark: #ffffff;
+  --on-dark-muted: #fff0e3;
+
+  --on-light: #2b1608;
+  --on-light-muted: #70401f;
 
   /* ---- Hairlines -------------------------------------------------------- */
-  --line-dark: #f3ede41f;      /* lines on dark backgrounds                  */
-  --line-light: #1b14121f;     /* lines on light backgrounds                 */
+  --line-dark: #ffffff40;
+  --line-light: #f9731625;
 
-  /* ---- Collection mood colours ------------------------------------------
-     The collection section's background shifts to each saree's tone as it
-     changes on scroll.                                                     */
-  --tone-silk: #1f1124;
-  --tone-banarasi: #10142c;
-  --tone-designer: #0b1a13;
-  --tone-festive: #2a1908;
-  --tone-ethnic: #2b100c;
-  --tone-bridal: #2a0d18;
+  /* ---- Collection mood colours ------------------------------------------ */
+  /* ---- Collection mood colours ------------------------------------------ */
+
+  --tone-silk: #8f3f0f;
+  --tone-banarasi: #7a3008;
+  --tone-designer: #9a4a16;
+  --tone-festive: #a84b0b;
+  --tone-ethnic: #85350d;
+  --tone-bridal: #76240d;
 
   /* ---- Buttons ---------------------------------------------------------- */
-  --button-bg: var(--ivory);
-  --button-text: var(--on-light);
-  --button-hover-bg: var(--accent);
-  --button-hover-text: var(--on-light);
-  --whatsapp: #1f7a52;
-  --whatsapp-hover: #18643f;
+  --button-bg: #ffffff;
+  --button-text: #e85d00;
+  --button-hover-bg: #fff1e4;
+  --button-hover-text: #d94f00;
 
-  /* ---- Typography -------------------------------------------------------
-     First value = web font loaded in src/app/layout.tsx.                   */
+  /* ---- WhatsApp --------------------------------------------------------- */
+  --whatsapp: #25a866;
+  --whatsapp-hover: #1e8e56;
+
+  /* ---- Typography ------------------------------------------------------- */
   --typeface-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", serif;
   --typeface-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
   --typeface-devanagari: var(--font-noto-serif-devanagari), "Noto Serif Devanagari", serif;

@@ -131,7 +131,7 @@ export function SareeStory() {
             <div className="mt-5 grid lg:mt-8">
               {collections.map((item, i) => {
                 const isActive = i === active;
-                const whatsapp = whatsappHref(`Hello Abhinandan NX! I would like to know more about your ${item.name}.`);
+                const whatsapp = whatsappHref(`Hello Abhinandan Ex! I would like to know more about your ${item.name}.`);
                 const words = item.name.split(" ");
 
                 return (
@@ -140,9 +140,8 @@ export function SareeStory() {
                       {words.map((word, w) => (
                         <span key={word} className="-mb-[0.1em] mr-[0.22em] inline-block overflow-hidden pb-[0.16em] align-bottom">
                           <span
-                            className={`inline-block transition-transform duration-1000 ease-out-soft ${
-                              isActive ? "translate-y-0" : i < active ? "-translate-y-[110%]" : "translate-y-[110%]"
-                            } ${w === 1 ? "italic text-accent-soft" : ""}`}
+                            className={`inline-block transition-transform duration-1000 ease-out-soft ${isActive ? "translate-y-0" : i < active ? "-translate-y-[110%]" : "translate-y-[110%]"
+                              } ${w === 1 ? "italic text-accent-soft" : ""}`}
                             style={{ transitionDelay: isActive ? `${200 + w * 90}ms` : "0ms" }}
                           >
                             {word}
@@ -151,9 +150,8 @@ export function SareeStory() {
                       ))}
                     </h3>
                     <p
-                      className={`mt-4 max-w-sm text-lg leading-relaxed text-on-dark/80 transition-[opacity,translate] duration-700 ease-out-soft ${
-                        isActive ? "translate-y-0 opacity-100 delay-500" : "translate-y-4 opacity-0"
-                      }`}
+                      className={`mt-4 max-w-sm text-lg leading-relaxed text-on-dark/80 transition-[opacity,translate] duration-700 ease-out-soft ${isActive ? "translate-y-0 opacity-100 delay-500" : "translate-y-4 opacity-0"
+                        }`}
                     >
                       {item.description}
                     </p>
@@ -161,9 +159,8 @@ export function SareeStory() {
                       href={whatsapp ?? "#contact"}
                       {...(whatsapp ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       tabIndex={isActive ? undefined : -1}
-                      className={`label mt-7 inline-flex items-center gap-3 text-on-dark transition-[opacity,color] duration-700 hover:text-accent ${
-                        isActive ? "opacity-100 delay-700" : "pointer-events-none opacity-0"
-                      }`}
+                      className={`label mt-7 inline-flex items-center gap-3 text-on-dark transition-[opacity,color] duration-700 hover:text-accent ${isActive ? "opacity-100 delay-700" : "pointer-events-none opacity-0"
+                        }`}
                     >
                       <span className="link-line pb-1">Enquire about this collection</span>
                       <ArrowUpRightIcon className="h-4 w-4" />
@@ -181,9 +178,8 @@ export function SareeStory() {
                     type="button"
                     onClick={() => jumpTo(i)}
                     aria-current={i === active ? "true" : undefined}
-                    className={`label transition-colors duration-500 ${
-                      i === active ? "text-accent" : "text-on-dark/45 hover:text-on-dark"
-                    }`}
+                    className={`label transition-colors duration-500 ${i === active ? "text-accent" : "text-on-dark/45 hover:text-on-dark"
+                      }`}
                   >
                     {item.name}
                   </button>

@@ -122,7 +122,7 @@ export function Hero() {
               </span>
               <span className="mask-line pt-[0.1em]">
                 <span className="display text-[clamp(3.6rem,7.5vw,6.4rem)] italic leading-none text-accent" style={heroDelay(900)}>
-                  NX
+                  EX
                 </span>
               </span>
               <span className="sr-only"> — {business.name.english}</span>

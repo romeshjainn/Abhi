@@ -9,7 +9,7 @@ import { SafeImage } from "./ui/SafeImage";
 
 // Words wrapped in *asterisks* are set in gold italics.
 const STATEMENT =
-  "Abhinandan NX is where the beauty of Indian *tradition* meets *modern* style — sarees, lehengas and ethnic wear, chosen to make every special moment of yours more *beautiful.*";
+  "Abhinandan Ex is where the beauty of Indian *tradition* meets *modern* style — sarees, lehengas and ethnic wear, chosen to make every special moment of yours more *beautiful.*";
 
 const values = [
   { title: "Tradition", text: "The beauty of Indian weaves, zari and embroidery." },

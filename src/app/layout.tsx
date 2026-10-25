@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   description,
   applicationName: business.name.english,
   keywords: [
-    "Abhinandan NX",
+    "Abhinandan Ex",
     "saree shop Korba",
     "Banarasi saree Korba",
     "silk saree Chhattisgarh",

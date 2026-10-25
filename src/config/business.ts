@@ -33,7 +33,7 @@ export interface BusinessConfig {
 }
 
 export const business: BusinessConfig = {
-  name: { hindi: "अभिनंदन", english: "Abhinandan NX" },
+  name: { hindi: "अभिनंदन", english: "Abhinandan Ex" },
   tagline: "The beauty of tradition, in every style.",
   description:
     "Silk and Banarasi sarees, designer sarees, bridal lehengas and festive ethnic wear for women in Korba, Chhattisgarh.",
@@ -41,7 +41,7 @@ export const business: BusinessConfig = {
 
   phone: "",
   whatsapp: "",
-  whatsappGreeting: "Hello Abhinandan NX! I would like to know more about your collection.",
+  whatsappGreeting: "Hello Abhinandan Ex! I would like to know more about your collection.",
   email: "",
   streetAddress: "",
   mapsUrl: "",
