@@ -1,73 +1,76 @@
 /* ==========================================================================
    Abhinandan Ex — CENTRAL THEME
    --------------------------------------------------------------------------
-   ORANGE + WHITE — bright, premium, modern Indian fashion
+   BURNT ORANGE + PLUM + CHAMPAGNE + IVORY
+   Luxury Indian fashion / premium ethnic wear
    ========================================================================== */
 
 :root {
   /* ---- Brand ------------------------------------------------------------ */
-  --primary: #C45508;
-  /* strong vibrant orange */
-  --primary-deep: #e85d00;
-  /* deeper orange */
-  --accent: #ff9a3c;
-  /* light orange */
-  --accent-soft: #ffd0a3;
-  /* soft peach */
+  --primary: #D85C1A;          /* burnt orange */
+  --primary-deep: #A83F12;     /* deep terracotta */
+  --accent: #C98B3A;           /* champagne gold */
+  --accent-soft: #F1D6A8;      /* soft champagne */
 
   /* ---- Surfaces --------------------------------------------------------- */
-  --ink: #f97316;
-  /* MAIN ORANGE — hero/background */
-  --ink-soft: #ff8a32;
-  /* lighter orange sections */
-  --ink-raised: #ff9f4a;
-  /* cards on orange */
-  --ivory: #ffffff;
-  /* pure white */
-  --ivory-deep: #fff4e8;
-  /* very light orange-white */
-  --overlay: #c94f00;
-  /* orange image overlay */
+  --ink: #32151A;              /* deep plum-brown */
+  --ink-soft: #4A2025;         /* lighter plum */
+  --ink-raised: #632B2A;       /* elevated plum */
+
+  --ivory: #FFF9F1;            /* warm ivory */
+  --ivory-deep: #F6EBDD;       /* creamy beige */
+
+  --overlay: #5A241D;          /* warm dark overlay */
 
   /* ---- Text ------------------------------------------------------------- */
-  --on-dark: #ffffff;
-  --on-dark-muted: #fff0e3;
+  --on-dark: #FFF9F1;
+  --on-dark-muted: #E8D8CC;
 
-  --on-light: #2b1608;
-  --on-light-muted: #70401f;
+  --on-light: #32151A;
+  --on-light-muted: #765B50;
 
   /* ---- Hairlines -------------------------------------------------------- */
-  --line-dark: #ffffff40;
-  --line-light: #f9731625;
+  --line-dark: #FFFFFF22;
+  --line-light: #32151A18;
 
-  /* ---- Collection mood colours ------------------------------------------ */
-  /* ---- Collection mood colours ------------------------------------------ */
+  /* ---- Collection mood colours ----------------------------------------- */
 
-  --tone-silk: #8f3f0f;
-  --tone-banarasi: #7a3008;
-  --tone-designer: #9a4a16;
-  --tone-festive: #a84b0b;
-  --tone-ethnic: #85350d;
-  --tone-bridal: #76240d;
+  --tone-silk: #8B3A35;        /* dusty wine */
+  --tone-banarasi: #9B641F;    /* antique gold */
+  --tone-designer: #C65A28;    /* terracotta */
+  --tone-festive: #7A2638;     /* wine */
+  --tone-ethnic: #5B3425;      /* warm brown */
+  --tone-bridal: #6B1F32;      /* deep burgundy */
 
   /* ---- Buttons ---------------------------------------------------------- */
-  --button-bg: #ffffff;
-  --button-text: #e85d00;
-  --button-hover-bg: #fff1e4;
-  --button-hover-text: #d94f00;
+  --button-bg: #D85C1A;
+  --button-text: #FFFFFF;
+  --button-hover-bg: #B94914;
+  --button-hover-text: #FFFFFF;
 
   /* ---- WhatsApp --------------------------------------------------------- */
-  --whatsapp: #25a866;
-  --whatsapp-hover: #1e8e56;
+  --whatsapp: #25A866;
+  --whatsapp-hover: #1E8E56;
 
   /* ---- Typography ------------------------------------------------------- */
-  --typeface-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", serif;
-  --typeface-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
-  --typeface-devanagari: var(--font-noto-serif-devanagari), "Noto Serif Devanagari", serif;
+  --typeface-display: var(--font-instrument-serif),
+    "Instrument Serif",
+    "Times New Roman",
+    serif;
+
+  --typeface-sans: var(--font-manrope),
+    "Manrope",
+    system-ui,
+    sans-serif;
+
+  --typeface-devanagari: var(--font-noto-serif-devanagari),
+    "Noto Serif Devanagari",
+    serif;
 
   /* ---- Shape & spacing -------------------------------------------------- */
   --radius-pill: 999px;
   --radius-card: 4px;
+
   --container-max: 1440px;
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
   --section-space: clamp(6rem, 13vw, 11rem);
